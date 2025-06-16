@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>2D Barcode Scanner</title>
+  <style>
+    #output {
+      margin-top: 20px;
+      font-family: monospace;
+      font-size: 16px;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    .format {
+      font-weight: bold;
+      color: #007BFF;
+    }
+  </style>
+</head>
+<body>
+  <h1>Universal 2D Barcode Scanner</h1>
+  <p>Select an image file containing a QR Code, Data Matrix, Aztec, or PDF417 code.</p>
+  <input type="file" id="barcode-input" accept="image/*">
+  <div id="output"></div>
+
+  <script type="text/javascript" src="https://unpkg.com/@zxing/library@latest"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
