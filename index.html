@@ -1,115 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Responsive 2D Barcode Scanner</title>
-  
+  <title>2D Barcode Scanner</title>
   <style>
-    /* --- General Body & Layout Styles --- */
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #f4f7f6;
-      color: #333;
-      margin: 0;
-      padding: 15px; /* Add some padding for small screens */
-    }
-
-    /* --- Content Wrapper --- */
-    main {
-      max-width: 800px; /* Max width for readability on large screens */
-      margin: 0 auto; /* Center the content on large screens */
-      background-color: #ffffff;
-      padding: 20px 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    }
-
-    h1 {
-      font-size: 1.8em;
-      color: #1a2533;
-      text-align: center;
-    }
-    
-    p {
-      text-align: center;
-      color: #555;
-      margin-bottom: 25px;
-    }
-
-    /* --- File Input Styling for a Better Mobile Experience --- */
-    /* Hide the default, ugly file input */
-    #barcode-input {
-      display: none;
-    }
-
-    /* Style a label to look like a modern button */
-    .file-input-label {
-      display: block;
-      width: 100%;
-      text-align: center;
-      padding: 15px 20px;
-      background-color: #007BFF;
-      color: #ffffff;
-      font-size: 1.1em;
-      font-weight: bold;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.2s ease-in-out;
-    }
-
-    .file-input-label:hover {
-      background-color: #0056b3;
-    }
-
-    /* --- Output Box Styling --- */
     #output {
-      margin-top: 25px;
+      margin-top: 20px;
       font-family: monospace;
       font-size: 16px;
       white-space: pre-wrap;
       word-break: break-all;
-      background-color: #e9ecef;
-      padding: 15px;
-      border-radius: 5px;
-      border: 1px solid #dee2e6;
-      min-height: 50px; /* Give it some height even when empty */
     }
-
     .format {
       font-weight: bold;
-      color: #0056b3;
-    }
-
-    /* --- Media Query for smaller screens --- */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.5em;
-      }
-      main {
-        padding: 15px 20px;
-      }
+      color: #007BFF;
     }
   </style>
 </head>
 <body>
+  <h1>Universal 2D Barcode Scanner</h1>
+  <p>Select an image file containing a QR Code, Data Matrix, Aztec, or PDF417 code.</p>
+  <input type="file" id="barcode-input" accept="image/*">
+  <div id="output"></div>
 
-  <main>
-    <h1>Universal 2D Barcode Scanner</h1>
-    <p>Select an image file containing a QR Code, Data Matrix, Aztec, or PDF417 code.</p>
-
-    <label for="barcode-input" class="file-input-label">
-      Select Image to Scan
-    </label>
-    
-    <input type="file" id="barcode-input" accept="image/*">
-    
-    <div id="output"></div>
-  </main>
-  
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@zxing/library@latest/brouser/zxing.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/@zxing/library@latest"></script>
 
   <script src="script.js"></script>
 </body>
